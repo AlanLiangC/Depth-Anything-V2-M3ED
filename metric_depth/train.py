@@ -76,6 +76,9 @@ def main():
         valset = Hypersim('dataset/splits/hypersim/val.txt', 'val', size=size)
     elif args.dataset == 'vkitti':
         valset = KITTI('dataset/splits/kitti/val.txt', 'val', size=size)
+    elif args.dataset == 'm3ed':
+        trainset = M3ED('/home/alan/AlanLiang/Dataset/M3ED/processed/Car/Urban_Day/car_urban_day_city_hall/car_urban_day_city_hall_data.h5',
+                        'val')
     else:
         raise NotImplementedError
     valsampler = torch.utils.data.distributed.DistributedSampler(valset)
