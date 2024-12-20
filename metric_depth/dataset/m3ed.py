@@ -24,7 +24,7 @@ def cart_to_hom(pts):
     return pts_hom
 
 class M3ED(Dataset):
-    def __init__(self, sequence_path, mode, size=(1280, 800)):
+    def __init__(self, sequence_path, mode, size=(518, 518)):
 
         self.mode = mode
         self.size = size
@@ -42,7 +42,7 @@ class M3ED(Dataset):
                 resize_method='lower_bound',
                 image_interpolation_method=cv2.INTER_CUBIC,
             ),
-            NormalizeImage(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+            NormalizeImage(mean=[0.215, 0.292, 0.247], std=[0.198, 0.233, 0.205]),
             PrepareForNet(),
         ])
 
@@ -113,7 +113,7 @@ class M3ED(Dataset):
         imgpts = imgpts.astype(np.int64)
         depth = points_cam[:,2][valid_points]
         depth_image = np.zeros(self.image_shape) # W x H
-        depth_image[imgpts[:, 0], imgpts[:, 1]] = (depth / 90)
+        depth_image[imgpts[:, 0], imgpts[:, 1]] = depth 
         depth_image = np.clip(depth_image, None, 1)
         return depth_image
 
@@ -128,9 +128,8 @@ class M3ED(Dataset):
         sample['image'] = torch.from_numpy(sample['image'])
         sample['depth'] = torch.from_numpy(sample['depth'])
         sample['depth'] = sample['depth']
-        
         sample['valid_mask'] = sample['depth'] > 0
-                
+        # sample = dict(image = image)
         return sample
 
 
@@ -139,5 +138,19 @@ if __name__ == "__main__":
     dataset = M3ED(sequence_path='/home/alan/AlanLiang/Dataset/M3ED/processed/Car/Urban_Day/car_urban_day_city_hall/car_urban_day_city_hall_data.h5',
                    mode='train')
     iteration = iter(dataset)
-    sample = iteration.__next__()
-    print(sample)
+    # sample = iteration.__next__()
+    # print(sample)
+    mean, std = np.zeros(3), np.zeros(3)
+
+    for i in range(dataset.__len__()):
+        sample = iteration.__next__()
+        img = sample['image']
+        img = img.reshape(-1, 3)
+        mean += img.mean(axis=0)
+        std += img.std(axis=0)
+
+    mean = mean / dataset.__len__()
+    std = std / len(dataset.__len__())
+
+    print(mean)
+    print(std)
