@@ -5,7 +5,7 @@ import torch
 from torch.utils.data import Dataset
 from torchvision.transforms import Compose
 
-from dataset.transform import Resize, NormalizeImage, PrepareForNet, Crop
+from metric_depth.dataset.transform import Resize, NormalizeImage, PrepareForNet, Crop
 
 
 def hypersim_distance_to_depth(npyDistance):

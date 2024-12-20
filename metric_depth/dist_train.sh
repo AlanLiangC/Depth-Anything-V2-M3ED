@@ -2,7 +2,7 @@
 now=$(date +"%Y%m%d_%H%M%S")
 
 epoch=120
-bs=2
+bs=16
 gpus=2
 lr=0.000005
 encoder=vits

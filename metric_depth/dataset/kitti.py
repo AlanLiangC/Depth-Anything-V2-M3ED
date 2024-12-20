@@ -3,7 +3,7 @@ import torch
 from torch.utils.data import Dataset
 from torchvision.transforms import Compose
 
-from dataset.transform import Resize, NormalizeImage, PrepareForNet
+from metric_depth.dataset.transform import Resize, NormalizeImage, PrepareForNet
 
 
 class KITTI(Dataset):
