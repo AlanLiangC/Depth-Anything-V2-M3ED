@@ -1,0 +1,163 @@
+/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py:181: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+[2024-12-19 13:53:41,809] torch.distributed.run: [WARNING] 
+[2024-12-19 13:53:41,809] torch.distributed.run: [WARNING] *****************************************
+[2024-12-19 13:53:41,809] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2024-12-19 13:53:41,809] torch.distributed.run: [WARNING] *****************************************
+/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/framework/dtypes.py:585: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.  (This may have returned Python scalars in past versions.
+  np.object,
+/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/framework/dtypes.py:585: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.  (This may have returned Python scalars in past versions.
+  np.object,
+Traceback (most recent call last):
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/compat/__init__.py", line 42, in tf
+Traceback (most recent call last):
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/compat/__init__.py", line 42, in tf
+    from tensorboard.compat import notf  # noqa: F401    
+from tensorboard.compat import notf  # noqa: F401
+ImportErrorImportError: : cannot import name 'notf' from 'tensorboard.compat' (/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/compat/__init__.py)cannot import name 'notf' from 'tensorboard.compat' (/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/compat/__init__.py)
+
+
+During handling of the above exception, another exception occurred:
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 15, in <module>
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 15, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/utils/tensorboard/__init__.py", line 12, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/utils/tensorboard/__init__.py", line 12, in <module>
+    from .writer import FileWriter, SummaryWriter  # noqa: F401
+    from .writer import FileWriter, SummaryWriter  # noqa: F401  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/utils/tensorboard/writer.py", line 16, in <module>
+
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/utils/tensorboard/writer.py", line 16, in <module>
+    from ._embedding import get_embedding_info, make_mat, make_sprite, make_tsv, write_pbtxt
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/utils/tensorboard/_embedding.py", line 9, in <module>
+    from ._embedding import get_embedding_info, make_mat, make_sprite, make_tsv, write_pbtxt
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/utils/tensorboard/_embedding.py", line 9, in <module>
+    _HAS_GFILE_JOIN = hasattr(tf.io.gfile, "join")
+      File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/lazy.py", line 65, in __getattr__
+_HAS_GFILE_JOIN = hasattr(tf.io.gfile, "join")
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/lazy.py", line 65, in __getattr__
+    return getattr(load_once(self), attr_name)    return getattr(load_once(self), attr_name)
+
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/lazy.py", line 97, in wrapper
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/lazy.py", line 97, in wrapper
+    cache[arg] = f(arg)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/lazy.py", line 50, in load_once
+    cache[arg] = f(arg)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/lazy.py", line 50, in load_once
+    module = load_fn()
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/compat/__init__.py", line 45, in tf
+    module = load_fn()
+      File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorboard/compat/__init__.py", line 45, in tf
+import tensorflow
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/__init__.py", line 41, in <module>
+    import tensorflow
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/__init__.py", line 41, in <module>
+    from tensorflow.python.tools import module_util as _module_util
+    from tensorflow.python.tools import module_util as _module_util  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/__init__.py", line 46, in <module>
+
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/__init__.py", line 46, in <module>
+    from tensorflow.python import data
+      File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/__init__.py", line 25, in <module>
+from tensorflow.python import data
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/__init__.py", line 25, in <module>
+        from tensorflow.python.data import experimentalfrom tensorflow.python.data import experimental
+
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/experimental/__init__.py", line 97, in <module>
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/experimental/__init__.py", line 97, in <module>
+    from tensorflow.python.data.experimental import service
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/experimental/service/__init__.py", line 353, in <module>
+    from tensorflow.python.data.experimental import service
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/experimental/service/__init__.py", line 353, in <module>
+    from tensorflow.python.data.experimental.ops.data_service_ops import distribute    
+from tensorflow.python.data.experimental.ops.data_service_ops import distribute  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/experimental/ops/data_service_ops.py", line 26, in <module>
+
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/experimental/ops/data_service_ops.py", line 26, in <module>
+    from tensorflow.python.data.experimental.ops import compression_ops
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/experimental/ops/compression_ops.py", line 20, in <module>
+    from tensorflow.python.data.experimental.ops import compression_ops
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/experimental/ops/compression_ops.py", line 20, in <module>
+    from tensorflow.python.data.util import structure
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/util/structure.py", line 26, in <module>
+    from tensorflow.python.data.util import structure
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/util/structure.py", line 26, in <module>
+    from tensorflow.python.data.util import nest
+    from tensorflow.python.data.util import nest  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/util/nest.py", line 40, in <module>
+
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/data/util/nest.py", line 40, in <module>
+    from tensorflow.python.framework import sparse_tensor as _sparse_tensor
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/framework/sparse_tensor.py", line 28, in <module>
+    from tensorflow.python.framework import sparse_tensor as _sparse_tensor
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/framework/sparse_tensor.py", line 28, in <module>
+    from tensorflow.python.framework import constant_op
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/framework/constant_op.py", line 29, in <module>
+    from tensorflow.python.framework import constant_op
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/framework/constant_op.py", line 29, in <module>
+        from tensorflow.python.eager import executefrom tensorflow.python.eager import execute
+
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 27, in <module>
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 27, in <module>
+    from tensorflow.python.framework import dtypes
+      File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/framework/dtypes.py", line 585, in <module>
+from tensorflow.python.framework import dtypes
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/tensorflow/python/framework/dtypes.py", line 585, in <module>
+    np.object,
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/numpy/__init__.py", line 284, in __getattr__
+    np.object,
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/numpy/__init__.py", line 284, in __getattr__
+    raise AttributeError("module {!r} has no attribute "    
+raise AttributeError("module {!r} has no attribute "
+AttributeErrorAttributeError: : module 'numpy' has no attribute 'object'
+module 'numpy' has no attribute 'object'
+[2024-12-19 13:53:46,847] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 3362999) of binary: /home/liangao/miniconda3/envs/openmmlab/bin/python3
+Traceback (most recent call last):
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 196, in <module>
+    main()
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 192, in main
+    launch(args)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 177, in launch
+    run(args)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+train.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-12-19_13:53:46
+  host      : server
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 3363000)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-12-19_13:53:46
+  host      : server
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 3362999)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

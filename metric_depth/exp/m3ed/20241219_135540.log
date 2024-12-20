@@ -1,0 +1,83 @@
+/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py:181: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+[2024-12-19 13:55:41,943] torch.distributed.run: [WARNING] 
+[2024-12-19 13:55:41,943] torch.distributed.run: [WARNING] *****************************************
+[2024-12-19 13:55:41,943] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2024-12-19 13:55:41,943] torch.distributed.run: [WARNING] *****************************************
+xFormers not available
+xFormers not available
+xFormers not available
+xFormers not available
+[2024-12-19 13:55:46,125][    INFO] {'bs': 4,
+ 'dataset': 'm3ed',
+ 'encoder': 'vits',
+ 'epochs': 120,
+ 'img_size': 518,
+ 'local_rank': 0,
+ 'lr': 5e-06,
+ 'max_depth': 90.0,
+ 'min_depth': 0.001,
+ 'ngpus': 2,
+ 'port': 20596,
+ 'pretrained_from': '../depth_anything_v2_vits.pth',
+ 'save_path': 'exp/m3ed'}
+
+Traceback (most recent call last):
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 218, in <module>
+    main()
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 68, in main
+    trainset = M3ED('/data1/liangao/Dataset/M3ED/processed/Car/Urban_Day/car_urban_day_city_hall/car_urban_day_city_hall_data.h5')
+TypeError: __init__() missing 1 required positional argument: 'mode'
+Traceback (most recent call last):
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 218, in <module>
+    main()
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 68, in main
+    trainset = M3ED('/data1/liangao/Dataset/M3ED/processed/Car/Urban_Day/car_urban_day_city_hall/car_urban_day_city_hall_data.h5')
+TypeError: __init__() missing 1 required positional argument: 'mode'
+[2024-12-19 13:55:46,970] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 3363668) of binary: /home/liangao/miniconda3/envs/openmmlab/bin/python3
+Traceback (most recent call last):
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 196, in <module>
+    main()
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 192, in main
+    launch(args)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 177, in launch
+    run(args)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+train.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-12-19_13:55:46
+  host      : server
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 3363669)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-12-19_13:55:46
+  host      : server
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 3363668)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

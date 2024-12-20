@@ -1,0 +1,87 @@
+/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py:181: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+[2024-12-19 13:56:15,683] torch.distributed.run: [WARNING] 
+[2024-12-19 13:56:15,683] torch.distributed.run: [WARNING] *****************************************
+[2024-12-19 13:56:15,683] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2024-12-19 13:56:15,683] torch.distributed.run: [WARNING] *****************************************
+xFormers not available
+xFormers not available
+xFormers not available
+xFormers not available
+[2024-12-19 13:56:19.193] [ouster::sensor] [info] parsing legacy metadata format
+[2024-12-19 13:56:19,223][    INFO] {'bs': 4,
+ 'dataset': 'm3ed',
+ 'encoder': 'vits',
+ 'epochs': 120,
+ 'img_size': 518,
+ 'local_rank': 0,
+ 'lr': 5e-06,
+ 'max_depth': 90.0,
+ 'min_depth': 0.001,
+ 'ngpus': 2,
+ 'port': 20596,
+ 'pretrained_from': '../depth_anything_v2_vits.pth',
+ 'save_path': 'exp/m3ed'}
+
+[2024-12-19 13:56:19.225] [ouster::sensor] [info] parsing legacy metadata format
+[2024-12-19 13:56:19.250] [ouster::sensor] [info] parsing legacy metadata format
+[2024-12-19 13:56:19.250] [ouster::sensor] [info] parsing legacy metadata format
+Traceback (most recent call last):
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 219, in <module>
+    main()
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 84, in main
+    valsampler = torch.utils.data.distributed.DistributedSampler(valset)
+UnboundLocalError: local variable 'valset' referenced before assignment
+Traceback (most recent call last):
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 219, in <module>
+    main()
+  File "/data1/liangao/AlanLiang/Projects/MVLM/Depth-Anything-V2-M3ED/metric_depth/train.py", line 84, in main
+    valsampler = torch.utils.data.distributed.DistributedSampler(valset)
+UnboundLocalError: local variable 'valset' referenced before assignment
+[2024-12-19 13:56:20,714] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 3363866) of binary: /home/liangao/miniconda3/envs/openmmlab/bin/python3
+Traceback (most recent call last):
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 196, in <module>
+    main()
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 192, in main
+    launch(args)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 177, in launch
+    run(args)
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/liangao/miniconda3/envs/openmmlab/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+train.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-12-19_13:56:20
+  host      : server
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 3363867)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-12-19_13:56:20
+  host      : server
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 3363866)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

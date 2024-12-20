@@ -65,8 +65,8 @@ def main():
     elif args.dataset == 'vkitti':
         trainset = VKITTI2('dataset/splits/vkitti2/train.txt', 'train', size=size)
     elif args.dataset == 'm3ed':
-        trainset = M3ED('/home/alan/AlanLiang/Dataset/M3ED/processed/Car/Urban_Day/car_urban_day_city_hall/car_urban_day_city_hall_data.h5',
-                        'train')
+        trainset = M3ED('/data1/liangao/Dataset/M3ED/processed/Car/Urban_Day/car_urban_day_city_hall/car_urban_day_city_hall_data.h5',
+                'train')
     else:
         raise NotImplementedError
     trainsampler = torch.utils.data.distributed.DistributedSampler(trainset)
@@ -77,7 +77,7 @@ def main():
     elif args.dataset == 'vkitti':
         valset = KITTI('dataset/splits/kitti/val.txt', 'val', size=size)
     elif args.dataset == 'm3ed':
-        trainset = M3ED('/home/alan/AlanLiang/Dataset/M3ED/processed/Car/Urban_Day/car_urban_day_city_hall/car_urban_day_city_hall_data.h5',
+        valset = M3ED('/data1/liangao/Dataset/M3ED/processed/Car/Urban_Day/car_urban_day_city_hall/car_urban_day_city_hall_data.h5',
                         'val')
     else:
         raise NotImplementedError
